@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 15;
+            padding: 0;
+        }
+
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+            color: rgb(122, 111, 111);
+            background-color: black;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px;
+            padding: 1px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px hsl(213, 80%, 46%, 1);
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            background-color: black;
+            color: hsl(213, 80%, 46%);
+            box-shadow: 0 0 15px rgb(122, 111, 111, 1);
+        }
+
+
+        body {
+            background-color: #000000;
+            color: rgb(122, 111, 111);
+            font-family: "Poppins", sams-serif;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 45px;
+
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 33px;
+            list-style-type: disc;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(122, 111, 111);
+
+        }
+
+        .left {
+            font-size: 5rem;
+
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space around;
+            margin: 0 23px;
+        }
+
+        nav ul li a:hover {
+            color: hsl(213, 80%, 46%);
+
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 20px 20px;
+
+        }
+
+        .leftSection {
+            color: rgb(122, 111, 111);
+            font-size: 3rem;
+            margin: 70px 0;
+
+        }
+
+        .rightSection img {
+
+            margin: 50px 20px;
+
+
+        }
+
+        .leftSection p {
+            font-size: large;
+
+
+        }
+
+        .orange:hover {
+            color: hsl(213, 80%, 46%);
+            
+        }
+
+        .leftSection div p:hover {
+            color: hsl(213, 80%, 46%);
+        }
+
+        .rightSection:hover {
+            box-shadow: 0 0 10px hsl(213, 80%, 46%, 15)
+        }
+
+        .interest {
+
+            font-size: larger;
+        }
+
+        #element {
+
+            font-size: larger;
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin: auto;
+            height: 70vh;
+            font-size: larger;
+        }
+
+        .secondSection h1 {
+            font-size: 1.9rem;
+        }
+
+        .secondSection ol li:hover {
+            color: hsl(213, 80%, 46%);
+        }
+
+        main hr {
+            border: 0;
+            background: rgb(122, 111, 111);
+            height: 1.5px;
+            margin: 85px 120px;
+        }
+
+        .secondSection ol {
+            margin: 0px 70px;
+            list-style-type: disc;
+        }
+
+        .thirdSection {
+            max-width: 80vw;
+            margin: auto;
+            height: 70vh;
+            font-size: 1.9rem;
+            font-size: larger;
+        }
+
+        .fourthSection {
+            max-width: 80vw;
+            margin: auto;
+            height: 70vh;
+            font-size: 1.9rem;
+            font-size: larger;
+
+        }
+
+        .fourthSection ul {
+            margin: 0px 70px;
+        }
+
+
+        .fourthSection .btn a {
+
+            background-color: hsl(213, 80%, 46%);
+            color: hsl(0, 0%, 100%);
+            border: 2px hsl(213, 80%, 46%);
+            padding: 15px;
+            font-size: 15px;
+            border-radius: 10px;
+
+
+        }
+
+        .fourthSection .btn a:hover {
+            background-color: rgb(255, 255, 255);
+            color: hsl(213, 80%, 46%);
+            font-weight: bold;
+
+        }
+
+        .fourthSection ul p:hover {
+            color: hsl(213, 80%, 46%);
+        }
+
+        .fifthSection {
+            max-width: 80vw;
+            margin: auto;
+            height: 70vh;
+
+        }
+
+        .fifthSection h1 {
+            font-size: 3rem;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .social-icons i {
+            font-size: 45px;
+            color: white;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icons i:hover {
+            transform: scale(1.2);
+            color: hsl(213, 80%, 46%);
+
+        }
+
+        .a_tag{
+            transform: rotate(90deg);
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left logo">S</div>
+
+            <div class="right">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="">Resume</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection"> <!--Intro Section-->
+            <div class="leftSection">
+                <div> Hi, I am <span class="orange">Sourin Kar</span></div>
+                <div>
+                    <p>I aspire to become a software developer specializing in full-stack development, AI,
+                        cybersecurity,</p>
+                </div>
+                <div>
+                    <p>and Android development. Currently, I’m exploring these domains to build a strong foundation</p>
+                </div>
+                <div>
+                    <p>and discover my niche in the tech world.</p>
+                </div>
+
+                <div class="interest">Some of my other interests are</div>
+
+                <span id="element"></span>
+
+
+
+            </div>
+            <div class="rightSection">
+                <img src="tupai_img1.jpg" style="width: 300px; height: 400px; ">
+            </div>
+        </section>
+        <hr>
+
+        <section class="secondSection" id="about"> <!--About Section-->
+            <h1>About</h1>
+            <p>
+                I’m a 1st-year B.Tech student at Manipal University Jaipur, passionate about exploring diverse domains
+                in technology, including front-end and back-end development, AI, cybersecurity, and Android development.
+                I’m eager to learn, experiment, and build projects that expand my skills and understanding of the tech
+                world.
+            </p>
+            <br>
+            <h4>Skills I have:</h4>
+            <ol>
+                <li>Python</li>
+                <li>MySQL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ol>
+        </section>
+        <hr>
+
+        <!--<section class="thirdSection" id="experience"> Experience Section
+            <h1>Experience</h1>
+        </section>
+        <hr>-->
+
+        <section class="fourthSection" id="projects"> <!--Project Section-->
+            <h1>Projects</h1>
+            <ul>
+                <li>GST Billing System</li>
+                <p>
+                    This project is a simple console-based Billing and User Management System that helps small
+                    businesses manage users, products, and customer billing efficiently. It allows new users to register
+                    with a unique ID and password, and existing users to log in securely. The system maintains a product
+                    list with prices, enabling authorized users to add or modify items as needed. During the billing
+                    phase, the user can input customer details, select products with quantities, and generate both a
+                    console invoice and a PDF invoice with GST and total cost, saved uniquely by the customer’s name. It
+                    features a clear main menu for navigation, input validation to prevent errors, and data persistence
+                    through pickle files for storing users and products between sessions, ensuring smooth and reliable
+                    operation.
+                </p>
+                <div class="button">
+                    <button class="btn"><a href="https://github.com/SourinKar/GST-Billing-System">GitHub</a></button>
+                    <button class="btn"><a href="">More</a></button>
+                </div>
+                <br>
+
+                
+            </ul>
+        </section>
+        <hr>
+
+        <!-- Contact Section -->
+        <section class="fifthSection" id="contact">
+            <div>
+                <h1>Contact</h1>
+                <div class="social-icons">
+                    <a href="https://github.com/SourinKar" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sourin-kar-01b7312b8/" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/helo26160324/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/Helo26160324" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://telegram.me/Helo26160324" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <div class="a_tag"><a href="mailto:sourinkar2006@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-envelope"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <hr>
+
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Travelling,', 'Spending time with nautre,', '&amp; Listening to music.'],
+            typeSpeed: 50,
+        });
+    </script>
+
+</body>
+
+</html>

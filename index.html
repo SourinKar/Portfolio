@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         html {
@@ -21,7 +21,7 @@
         }
 
         * {
-            margin: 15;
+
             padding: 0;
         }
 
@@ -35,7 +35,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 50px;
+            margin: 20px 20px 0 20px;
             padding: 1px;
             border-radius: 50%;
             box-shadow: 0 0 15px hsl(213, 80%, 46%, 1);
@@ -52,7 +52,7 @@
         body {
             background-color: #000000;
             color: rgb(122, 111, 111);
-            font-family: "Poppins", sams-serif;
+            font-family: "Poppins", sans-serif;
 
         }
 
@@ -113,11 +113,10 @@
         }
 
         .rightSection img {
-
-            margin: 50px 20px;
-
-
+            max-width: 100%;
+            height: auto;
         }
+
 
         .leftSection p {
             font-size: large;
@@ -125,9 +124,9 @@
 
         }
 
-        .orange:hover {
+        .blue:hover {
             color: hsl(213, 80%, 46%);
-            
+
         }
 
         .leftSection div p:hover {
@@ -237,7 +236,7 @@
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 50px;
+            gap: 15px;
         }
 
         .social-icons i {
@@ -252,8 +251,128 @@
 
         }
 
-        .a_tag{
-            transform: rotate(90deg);
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: rgb(122, 111, 111);
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+
+        @media (max-width: 768px) {
+            .wapper-main {
+                width: 100%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .firstSection {
+                flex-direction: column;
+                text-align: center;
+
+            }
+
+            .fourthSection,
+            .fifthSection {
+                height: auto;
+                /* Let content decide the height */
+                padding-bottom: 40px;
+                /* Add space at the bottom */
+            }
+
+            main hr {
+                margin: 40px auto;
+                width: 80%;
+            }
+
+            nav ul {
+                display: none;
+                /* hide menu by default */
+                flex-direction: column;
+                background-color: black;
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            nav ul.show {
+                display: flex;
+                /* show menu when toggled */
+            }
+
+            .logo {
+                margin-top: 15px;
+            }
+
+            /* Toggle button */
+            .nav-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 30px;
+                color: rgb(122, 111, 111);
+                cursor: pointer;
+                z-index: 1001;
+                /* above sidebar */
+            }
+
+            /* Sidebar container */
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -250px;
+                /* hidden off-screen */
+                width: 250px;
+                height: 100%;
+                background-color: black;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+                transition: left 0.3s ease-in-out;
+                padding-top: 60px;
+                z-index: 1000;
+            }
+
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .sidebar ul li {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .sidebar ul li a {
+                text-decoration: none;
+                color: rgb(122, 111, 111);
+                font-size: 18px;
+                display: block;
+            }
+
+            .sidebar.active {
+                right: 0;
+            }
+
+            .sidebar ul li a:hover {
+                color: hsl(213, 80%, 46%);
+            }
+
+            /* Sidebar open state */
+            .sidebar.open {
+                left: 0;
+            }
+
+            .leftSection {
+                font-size: 1.5rem;
+            }
+
+            .left {
+                font-size: 2rem;
+            }
         }
     </style>
 
@@ -262,9 +381,9 @@
 <body>
     <header>
         <nav>
-            <div class="left logo">S</div>
+            <div class="left logo">S<a href=""></a></div>
 
-            <div class="right">
+            <div class="sidebar">
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
@@ -274,13 +393,19 @@
 
                 </ul>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                ☰
+            </button>
+
+
         </nav>
     </header>
+
 
     <main>
         <section class="firstSection"> <!--Intro Section-->
             <div class="leftSection">
-                <div> Hi, I am <span class="orange">Sourin Kar</span></div>
+                <div> Hi, I am <span class="blue">Sourin Kar</span></div>
                 <div>
                     <p>I aspire to become a software developer specializing in full-stack development, AI,
                         cybersecurity,</p>
@@ -297,7 +422,6 @@
                 <span id="element"></span>
 
 
-
             </div>
             <div class="rightSection">
                 <img src="tupai_img1.jpg" style="width: 300px; height: 400px; ">
@@ -305,7 +429,8 @@
         </section>
         <hr>
 
-        <section class="secondSection" id="about"> <!--About Section-->
+        <!--About Section-->
+        <section class="secondSection" id="about">
             <h1>About</h1>
             <p>
                 I’m a 1st-year B.Tech student at Manipal University Jaipur, passionate about exploring diverse domains
@@ -332,6 +457,8 @@
         <section class="fourthSection" id="projects"> <!--Project Section-->
             <h1>Projects</h1>
             <ul>
+
+                <!--Project 1-->
                 <li>GST Billing System</li>
                 <p>
                     This project is a simple console-based Billing and User Management System that helps small
@@ -346,11 +473,23 @@
                 </p>
                 <div class="button">
                     <button class="btn"><a href="https://github.com/SourinKar/GST-Billing-System">GitHub</a></button>
+                    <button class="btn"><a href="https://docs.google.com/document/d/1ttXGkB7pWwjfJ4srC_8W460jKdoWbPZGWjRlDYzduX0/edit?usp=sharing">More</a></button>
+                </div>
+                <br><br>
+
+                <!--Project 2
+                <li>University Website</li>
+                <p>
+                    A playful, fictional university website I built to sharpen my HTML, CSS, and JavaScript skills.
+                    Features multiple pages, responsive layouts, and a mock admissions form — all wrapped in a bright,
+                    fun design.
+                </p>
+                <div class="button">
+                    <button class="btn"><a href="">GitHub</a></button>
                     <button class="btn"><a href="">More</a></button>
                 </div>
-                <br>
+                <br><br>-->
 
-                
             </ul>
         </section>
         <hr>
@@ -376,8 +515,9 @@
                     <a href="https://telegram.me/Helo26160324" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-telegram"></i>
                     </a>
-                    <div class="a_tag"><a href="mailto:sourinkar2006@gmail.com" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-envelope"></i>
+                    <div class="a_tag"><a href="mailto:sourinkar2006@gmail.com" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
 
@@ -395,6 +535,17 @@
             strings: ['Travelling,', 'Spending time with nautre,', '&amp; Listening to music.'],
             typeSpeed: 50,
         });
+    </script>
+
+    <script>
+        const toggleBtn = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        toggleBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+        
+
     </script>
 
 </body>

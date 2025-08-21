@@ -11,7 +11,7 @@
 
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -40,10 +40,12 @@
             border-radius: 50%;
             box-shadow: 0 0 15px hsl(213, 80%, 46%, 1);
             cursor: pointer;
+            user-select: none;
+            flex-shrink: 0;
         }
 
         .logo:hover {
-            background-color: black;
+            background-color: #000000;
             color: hsl(213, 80%, 46%);
             box-shadow: 0 0 15px rgb(122, 111, 111, 1);
         }
@@ -60,7 +62,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 45px;
+
 
         }
 
@@ -258,120 +260,160 @@
             font-size: 30px;
             color: rgb(122, 111, 111);
             cursor: pointer;
-            margin-right: 20px;
+            margin-left: auto;
+        }
+
+        .nav-toggle:focus-visible {
+            outline: 2px dashed hsl(213, 80%, 46%);
+            outline-offset: 4px;
+        }
+
+        /* ---------------- SIDEBAR ---------------- */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -260px;
+            /* hidden off-screen */
+            width: 260px;
+            height: 100dvh;
+            background-color: #111;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.6);
+            transition: right 0.3s ease-in-out;
+            padding-top: 80px;
+            z-index: 1001;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            color: rgb(200, 200, 200);
+            font-size: 18px;
+            padding: 10px 12px;
+            border-radius: 8px;
+        }
+
+        .sidebar a:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* Clickable scrim to close sidebar */
+        .scrim {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(1px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease-in-out;
+            z-index: 1000;
+        }
+
+        .scrim.show {
+            opacity: 1;
+            pointer-events: auto;
         }
 
 
-        @media (max-width: 768px) {
-            .wapper-main {
-                width: 100%;
-            }
 
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
+        /* ---------------- RESPONSIVE ---------------- */
+        /* Tablets and down */
+        @media (max-width: 1024px) {
             .firstSection {
                 flex-direction: column;
                 text-align: center;
-
             }
 
-            .fourthSection,
-            .fifthSection {
-                height: auto;
-                /* Let content decide the height */
-                padding-bottom: 40px;
-                /* Add space at the bottom */
+            .leftSection {
+                font-size: 2rem;
             }
 
-            main hr {
-                margin: 40px auto;
-                width: 80%;
+            .rightSection img {
+                width: min(60%, 360px);
             }
 
             nav ul {
                 display: none;
-                /* hide menu by default */
-                flex-direction: column;
-                background-color: black;
-                width: 100%;
-                padding: 10px 0;
             }
+        }
 
-            nav ul.show {
-                display: flex;
-                /* show menu when toggled */
-            }
+        /* Mobiles */
+        @media (max-width: 768px) {
 
-            .logo {
-                margin-top: 15px;
-            }
-
-            /* Toggle button */
+            /* Show hamburger, hide desktop links */
             .nav-toggle {
                 display: block;
-                background: none;
-                border: none;
-                font-size: 30px;
-                color: rgb(122, 111, 111);
-                cursor: pointer;
-                z-index: 1001;
-                /* above sidebar */
             }
 
-            /* Sidebar container */
-            .sidebar {
-                position: fixed;
-                top: 0;
-                left: -250px;
-                /* hidden off-screen */
-                width: 250px;
-                height: 100%;
-                background-color: black;
-                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-                transition: left 0.3s ease-in-out;
-                padding-top: 60px;
-                z-index: 1000;
-            }
 
-            .sidebar ul {
-                list-style: none;
-                padding: 0;
-            }
 
-            .sidebar ul li {
-                margin: 20px 0;
-                text-align: center;
-            }
-
-            .sidebar ul li a {
-                text-decoration: none;
-                color: rgb(122, 111, 111);
-                font-size: 18px;
-                display: block;
-            }
-
-            .sidebar.active {
-                right: 0;
-            }
-
-            .sidebar ul li a:hover {
-                color: hsl(213, 80%, 46%);
-            }
-
-            /* Sidebar open state */
-            .sidebar.open {
-                left: 0;
+            .firstSection {
+                margin: 20px 16px;
+                gap: 16px;
             }
 
             .leftSection {
                 font-size: 1.5rem;
             }
 
-            .left {
-                font-size: 2rem;
+            .leftSection p {
+                font-size: 0.95rem;
+            }
+
+            .rightSection img {
+                width: 80%;
+                max-width: 360px;
+                margin: 0 auto;
+            }
+
+            .secondSection,
+            .thirdSection,
+            .fourthSection,
+            .fifthSection {
+                padding-bottom: 40px;
+            }
+
+            main hr {
+                margin: 40px auto;
+                width: 85%;
+            }
+
+            .logo {
+                margin-top: 15px;
+                /* a touch lower on mobile */
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+            .logo {
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+            }
+
+            .leftSection {
+                font-size: 1.5rem;
+            }
+
+            .rightSection img {
+                width: 100%;
+            }
+
+            .social-icons i {
+                font-size: 32px;
             }
         }
     </style>
@@ -383,23 +425,34 @@
         <nav>
             <div class="left logo">S<a href=""></a></div>
 
-            <div class="sidebar">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="">Resume</a></li>
 
-                </ul>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle menu">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="">Resume</a></li>
+
+            </ul>
+
+            <!-- Mobile hamburger -->
+            <button class="nav-toggle" aria-label="Toggle menu" aria-controls="mobile-sidebar" aria-expanded="false">
                 ☰
             </button>
-
-
         </nav>
     </header>
+
+    <!-- Mobile sidebar -->
+    <div class="sidebar" id="mobile-sidebar" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="">Resume</a></li>
+        </ul>
+    </div>
+    <div class="scrim" hidden></div>
 
 
     <main>
@@ -471,24 +524,13 @@
                     through pickle files for storing users and products between sessions, ensuring smooth and reliable
                     operation.
                 </p>
-                <div class="button">
-                    <button class="btn"><a href="https://github.com/SourinKar/GST-Billing-System">GitHub</a></button>
-                    <button class="btn"><a href="https://docs.google.com/document/d/1ttXGkB7pWwjfJ4srC_8W460jKdoWbPZGWjRlDYzduX0/edit?usp=sharing">More</a></button>
+                <div class="button btn">
+                    <a href="https://github.com/SourinKar/GST-Billing-System" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
+                    <a href="https://docs.google.com/document/d/1ttXGkB7pWwjfJ4srC_8W460jKdoWbPZGWjRlDYzduX0/edit?usp=sharing"
+                        target="_blank" rel="noopener noreferrer">More</a>
                 </div>
-                <br><br>
 
-                <!--Project 2
-                <li>University Website</li>
-                <p>
-                    A playful, fictional university website I built to sharpen my HTML, CSS, and JavaScript skills.
-                    Features multiple pages, responsive layouts, and a mock admissions form — all wrapped in a bright,
-                    fun design.
-                </p>
-                <div class="button">
-                    <button class="btn"><a href="">GitHub</a></button>
-                    <button class="btn"><a href="">More</a></button>
-                </div>
-                <br><br>-->
 
             </ul>
         </section>
@@ -496,33 +538,31 @@
 
         <!-- Contact Section -->
         <section class="fifthSection" id="contact">
-            <div>
-                <h1>Contact</h1>
-                <div class="social-icons">
-                    <a href="https://github.com/SourinKar" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/sourin-kar-01b7312b8/" target="_blank"
-                        rel="noopener noreferrer">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://www.instagram.com/helo26160324/" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://x.com/Helo26160324" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://telegram.me/Helo26160324" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-telegram"></i>
-                    </a>
-                    <div class="a_tag"><a href="mailto:sourinkar2006@gmail.com" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
 
+            <h1>Contact</h1>
+            <div class="social-icons">
+                <a href="https://github.com/SourinKar" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sourin-kar-01b7312b8/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/helo26160324/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/Helo26160324" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://telegram.me/Helo26160324" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <div class="a_tag"><a href="mailto:sourinkar2006@gmail.com" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
+
             </div>
+
         </section>
         <hr>
 
@@ -531,21 +571,52 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
     <script>
-        var typed = new Typed('#element', {
-            strings: ['Travelling,', 'Spending time with nautre,', '&amp; Listening to music.'],
+        new Typed('#element', {
+            strings: ['Travelling,', 'Spending time with nature,', '&amp; Listening to music.'],
             typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
         });
     </script>
 
+    <!-- Sidebar / Hamburger Logic -->
     <script>
         const toggleBtn = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('nav ul');
+        const sidebar = document.querySelector('.sidebar');
+        const scrim = document.querySelector('.scrim');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            scrim.classList.add('show');
+            scrim.hidden = false;
+            toggleBtn.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            scrim.classList.remove('show');
+            // Delay hiding to let fade-out finish
+            setTimeout(() => { scrim.hidden = true; }, 200);
+            toggleBtn.setAttribute('aria-expanded', 'false');
+        }
 
         toggleBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
+            const isOpen = sidebar.classList.contains('open');
+            if (isOpen) closeSidebar(); else openSidebar();
         });
-        
 
+        // Close when clicking scrim
+        scrim.addEventListener('click', closeSidebar);
+
+        // Close when selecting a link (and still navigate/redirect)
+        document.querySelectorAll('.sidebar a').forEach(a => {
+            a.addEventListener('click', closeSidebar);
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
     </script>
 
 </body>

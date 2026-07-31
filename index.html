@@ -2,246 +2,341 @@
 <html lang="en">
 
 <head>
+    <!--Title-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sourin Kar</title>
+    <meta name="description"
+        content="Sourin Kar - B.Tech CSE student building backend foundations, integrating AI, and exploring AI x cybersecurity.">
+    <title>Sourin Kar | Backend Developer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="styles.css">
-
+    <!--Visitor count-->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="left logo">S</div>
+    <!--Navbar-->
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="brand" href="#top" aria-label="Sourin Kar home">
+                <span class="brand-mark">SK</span>
+                <span class="brand-text">Sourin Kar</span>
+            </a>
 
+            <button class="nav-toggle" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
 
-            <ul>
+            <ul class="nav-links" id="site-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="https://drive.google.com/file/d/1R5g0WHmhrwD9_wUOcS3rhsCXgqZQ5ci4/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
-
             </ul>
-
-            <!-- Mobile hamburger -->
-            <button class="nav-toggle" aria-label="Toggle menu" aria-controls="mobile-sidebar" aria-expanded="false">
-                ☰
-            </button>
         </nav>
     </header>
 
-    <!-- Mobile sidebar -->
-    <div class="sidebar" id="mobile-sidebar" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="https://drive.google.com/file/d/1R5g0WHmhrwD9_wUOcS3rhsCXgqZQ5ci4/view?usp=sharing">Resume</a></li>
-        </ul>
-    </div>
-    <div class="scrim" hidden></div>
-
-    <!-- Splash Screen -->
-    <div id="splash">
-        <div class="splash-logo">S</div>
-    </div>
-
-
-    <main>
-        <section class="firstSection"> <!--Intro Section-->
-            <div class="leftSection">
-                <div> Hi, I am <span class="blue">Sourin Kar</span></div>
-                <div>
-                    <p>I aspire to become a software developer specializing in AI and
-                        cybersecurity.</p>
-                </div>
-                <div>
-                    <p>Currently, I’m exploring these domains to build a strong foundation</p>
-                </div>
-                <div>
-                    <p>and discover my niche in the tech world.</p>
-                </div>
-
-                <div class="interest">Some of my other interests are</div>
-
-                <span id="element"></span>
-
-
-            </div>
-            <div class="rightSection">
-                <img src="Tupai suite.jpeg" style="width: 300px; height: 536px; ">
-            </div>
-        </section>
-        <hr>
-
-        <!--About Section-->
-        <section class="secondSection" id="about">
-            <h1>About</h1>
-            <p>
-                I’m a 1st-year B.Tech CSE student at Manipal University Jaipur, passionate about exploring diverse domains
-                in technology, including Full-Stack development, AI, Cybersecurity, Cloud Computing, Android development and DevOps.
-                I’m eager to learn, experiment, and build projects that expand my skills and understanding of the tech
-                world.
-            </p>
-            <br>
-            <h4>Skills I have:</h4>
-            <ol>
-                <li>Python</li>
-                <li>MySQL</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>C</li>
-            </ol>
-        </section>
-        <hr>
-
-        <!--<section class="thirdSection" id="experience"> Experience Section
-            <h1>Experience</h1>
-        </section>
-        <hr>-->
-
-        <section class="fourthSection" id="projects"> <!--Project Section-->
-            <h1>Projects</h1>
-            <ul>
-
-                <!--Project 1-->
-                <li>GST Billing System</li>
-                <p>
-                    This project is a simple console-based Billing and User Management System that helps small
-                    businesses manage users, products, and customer billing efficiently. It allows new users to register
-                    with a unique ID and password, and existing users to log in securely. The system maintains a product
-                    list with prices, enabling authorized users to add or modify items as needed. During the billing
-                    phase, the user can input customer details, select products with quantities, and generate both a
-                    console invoice and a PDF invoice with GST and total cost, saved uniquely by the customer’s name. It
-                    features a clear main menu for navigation, input validation to prevent errors, and data persistence
-                    through pickle files for storing users and products between sessions, ensuring smooth and reliable
-                    operation.
+    <!--Hero Section-->
+    <main id="top">
+        <section class="hero section-block" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="eyebrow">B.Tech CSE @ Manipal University Jaipur</p>
+                <h1 id="hero-title">Backend developer building AI-powered, secure software.</h1>
+                <p class="professional-tagline">
+                    Backend Developer | Building AI-Powered Applications | AI x Cybersecurity | Open Source & Hackathons
                 </p>
-                <div class="button btn">
-                    <a href="https://github.com/SourinKar/GST-Billing-System" target="_blank"
-                        rel="noopener noreferrer">GitHub</a>
-                    <a href="https://docs.google.com/document/d/1ttXGkB7pWwjfJ4srC_8W460jKdoWbPZGWjRlDYzduX0/edit?usp=sharing"
-                        target="_blank" rel="noopener noreferrer">More</a>
-                </div>
+                <p class="hero-summary">
+                    I am Sourin Kar, a 2nd-year computer science undergrad building my foundation in
+                    backend systems and learning how AI can be integrated into useful, secure applications.
+                </p>
 
-
-            </ul>
-        </section>
-        <hr>
-
-        <!-- Contact Section -->
-        <section class="fifthSection" id="contact">
-
-            <h1>Contact</h1>
-            <div class="social-icons">
-                <a href="https://github.com/SourinKar" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/sourin-kar-01b7312b8/" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://www.instagram.com/helo26160324/" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://x.com/Helo26160324" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://telegram.me/Helo26160324" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-telegram"></i>
-                </a>
-                <div class="a_tag"><a href="mailto:sourinkar2006@gmail.com" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-envelope"></i>
+                <div class="hero-actions" aria-label="Primary actions">
+                    <a class="btn primary" href="#projects">
+                        <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+                        View Projects
+                    </a>
+                    <a class="btn secondary"
+                        href="https://drive.google.com/file/d/1R5g0WHmhrwD9_wUOcS3rhsCXgqZQ5ci4/view?usp=sharing"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                        Resume
                     </a>
                 </div>
 
+                <div class="signal-grid" aria-label="Portfolio highlights">
+                    <div>
+                        <span>Focus</span>
+                        <strong>AI x Cybersecurity</strong>
+                    </div>
+                    <div>
+                        <span>Core</span>
+                        <strong>DSA + Backend</strong>
+                    </div>
+                    <div>
+                        <span>Also Learning</span>
+                        <strong>Open Source + Hackathons</strong>
+                    </div>
+                </div>
             </div>
 
+            <div class="hero-visual" aria-label="Portrait and technical focus">
+                <div class="portrait-frame">
+                    <img src="Tupai suite.jpeg" alt="Portrait of Sourin Kar">
+                </div>
+                <div class="focus-panel">
+                    <span class="panel-kicker">Building foundation in</span>
+                    <strong id="rotating-focus">Backend systems + AI integration</strong>
+                </div>
+            </div>
         </section>
-        <hr>
 
+        <!--About-->
+        <section class="section-block about-section" id="about" aria-labelledby="about-title">
+            <div class="section-heading">
+                <p class="eyebrow">About</p>
+                <h2 id="about-title">I like building things while strengthening the fundamentals behind them.</h2>
+            </div>
+
+            <div class="about-layout">
+                <div class="about-copy">
+                    <p>
+                        I am a 2nd-year undergrad at Manipal University Jaipur, building a strong foundation in
+                        Data Structures & Algorithms, core CS concepts, and backend systems with AI integration.
+                    </p>
+                    <p>
+                        Alongside that, I am exploring AI x Cybersecurity and learning how software can be made more
+                        useful, reliable, and secure in real situations.
+                    </p>
+                </div>
+
+                <div class="principles" aria-label="Development principles">
+                    <article>
+                        <i class="fa-solid fa-server" aria-hidden="true"></i>
+                        <h3>Backend-first Thinking</h3>
+                        <p>Learning to structure logic, data, and workflows so applications stay easy to improve.</p>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                        <h3>Security Awareness</h3>
+                        <p>Building the habit of thinking about safety, validation, and trust while writing code.</p>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                        <h3>AI Integration</h3>
+                        <p>Working toward AI features that feel useful in a product, not just impressive in a demo.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!--Skills-->
+        <section class="section-block skills-section" id="skills" aria-labelledby="skills-title">
+            <div class="section-heading compact">
+                <p class="eyebrow">Skills</p>
+                <h2 id="skills-title">The tools and concepts I am actively building with.</h2>
+            </div>
+
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <h3>Languages</h3>
+                    <ul class="pill-list">
+                        <li>Python</li>
+                        <li>C</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </article>
+                <article class="skill-card">
+                    <h3>Frontend</h3>
+                    <ul class="pill-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Responsive UI</li>
+                    </ul>
+                </article>
+                <article class="skill-card">
+                    <h3>CS Fundamentals</h3>
+                    <ul class="pill-list">
+                        <li>DSA</li>
+                        <li>OOPs</li>
+                        <li>Competitive Programming</li>
+                    </ul>
+                </article>
+                <article class="skill-card">
+                    <h3>Databases & Tools</h3>
+                    <ul class="pill-list">
+                        <li>MySQL</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Linux</li>
+                    </ul>
+                </article>
+                <article class="skill-card">
+                    <h3>Backend & Frameworks</h3>
+                    <ul class="pill-list">
+                        <li>Flask API</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!--Experience-->
+        <section class="section-block experience-section" id="experience" aria-labelledby="experience-title">
+            <div class="section-heading">
+                <p class="eyebrow">Experience</p>
+                <h2 id="experience-title">Learning through coursework, projects, practice, and community work.</h2>
+            </div>
+
+            <div class="timeline">
+                <article class="timeline-item">
+                    <span class="timeline-date">2025 - Present</span>
+                    <div>
+                        <h3>B.Tech CSE Student</h3>
+                        <p class="timeline-place">Manipal University Jaipur</p>
+                        <p>
+                            Strengthening DSA, OOPs, database concepts, and backend development while building
+                            projects that help the theory click.
+                        </p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <span class="timeline-date">Current Focus</span>
+                    <div>
+                        <h3>Backend + AI Builder</h3>
+                        <p class="timeline-place">Projects, open source, and hackathons</p>
+                        <p>
+                            Improving my Git/GitHub workflow and preparing for team-based development through
+                            hackathons, open source, and hands-on application building.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--Projects-->
+        <section class="section-block projects-section" id="projects" aria-labelledby="projects-title">
+            <div class="section-heading">
+                <p class="eyebrow">Projects</p>
+                <h2 id="projects-title">A project where I practiced turning a business flow into working code.</h2>
+            </div>
+
+            <article class="project-card">
+                <div class="project-meta">
+                    <span>Featured Project</span>
+                    <h3>GST Billing System</h3>
+                </div>
+                <p>
+                    A console-based billing and user management system for small businesses. It supports secure
+                    user registration and login, product management, customer billing, GST calculation, console
+                    invoices, PDF invoice generation, input validation, and data persistence through pickle files.
+                </p>
+                <ul class="project-tags" aria-label="Project technologies and features">
+                    <li>Python</li>
+                    <li>PDF invoices</li>
+                    <li>GST billing</li>
+                    <li>File persistence</li>
+                    <li>Input validation</li>
+                </ul>
+                <div class="project-actions">
+                    <a class="btn primary" href="https://github.com/SourinKar/GST-Billing-System" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        GitHub
+                    </a>
+                    <a class="btn secondary"
+                        href="https://docs.google.com/document/d/1ttXGkB7pWwjfJ4srC_8W460jKdoWbPZGWjRlDYzduX0/edit?usp=sharing"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        Details
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!--Resume-->
+        <section class="section-block resume-section" id="resume" aria-labelledby="resume-title">
+            <div class="resume-band">
+                <div>
+                    <p class="eyebrow">Resume</p>
+                    <h2 id="resume-title">Prefer the resume version?</h2>
+                    <p>
+                        My resume keeps the important details in one place: education, skills, projects, and contact
+                        links.
+                    </p>
+                </div>
+                <a class="btn primary"
+                    href="https://drive.google.com/file/d/1R5g0WHmhrwD9_wUOcS3rhsCXgqZQ5ci4/view?usp=sharing"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                    Open Resume
+                </a>
+            </div>
+        </section>
+
+        <!--Contact-->
+        <section class="section-block contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="section-heading centered">
+                <p class="eyebrow">Contact</p>
+                <h2 id="contact-title">Have something interesting to build?</h2>
+                <p>I am open to backend projects, AI-powered applications, hackathons, and learning-focused
+                    collaborations.</p>
+            </div>
+
+            <div class="contact-actions">
+                <a href="mailto:sourinkar2006@gmail.com">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    Email
+                </a>
+                <a href="https://github.com/SourinKar" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/sourin-kar-01b7312b8/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/Helo26160324" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                    X
+                </a>
+                <a href="https://telegram.me/Helo26160324" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+                    Telegram
+                </a>
+                <a href="https://discord.com/users/798834091142807562" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                    Discord
+                </a>
+            </div>
+        </section>
     </main>
 
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <!--Interest script-->
-    <script>
-        new Typed('#element', {
-            strings: ['Travelling,', 'Spending time with nature,', '&amp; Listening to music.'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true
-        });
-    </script>
+    <!--Footer-->
+    <footer class="site-footer">
+        <div>
+            <strong>Sourin Kar</strong>
+            <span>Backend Developer | AI x Cybersecurity</span>
+        </div>
+        <a class="visitor-counter" href="https://hits.sh/" target="_blank" rel="noopener noreferrer"
+            aria-label="Visitor counter powered by Hits">
+            <img
+                src="https://hits.sh/sourinkar.xyz.svg?style=flat-square&label=%F0%9F%91%81%EF%B8%8FPage%20Visitors&extraCount=100&color=179086&labelColor=2b3441">
+        </a>
 
-    <!-- Sidebar / Hamburger Logic -->
-    <script>
-        const toggleBtn = document.querySelector('.nav-toggle');
-        const sidebar = document.querySelector('.sidebar');
-        const scrim = document.querySelector('.scrim');
+        <p>&copy; <span id="year"></span> Sourin Kar. Built with HTML, CSS, and JavaScript.</p>
+    </footer>
 
-        function openSidebar() {
-            sidebar.classList.add('open');
-            scrim.classList.add('show');
-            scrim.hidden = false;
-            toggleBtn.setAttribute('aria-expanded', 'true');
-        }
-
-        function closeSidebar() {
-            sidebar.classList.remove('open');
-            scrim.classList.remove('show');
-            // Delay hiding to let fade-out finish
-            setTimeout(() => { scrim.hidden = true; }, 200);
-            toggleBtn.setAttribute('aria-expanded', 'false');
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            const isOpen = sidebar.classList.contains('open');
-            if (isOpen) closeSidebar(); else openSidebar();
-        });
-
-        // Close when clicking scrim
-        scrim.addEventListener('click', closeSidebar);
-
-        // Close when selecting a link (and still navigate/redirect)
-        document.querySelectorAll('.sidebar a').forEach(a => {
-            a.addEventListener('click', closeSidebar);
-        });
-
-        // Close on ESC key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeSidebar();
-        });
-    </script>
-    <!--Reload after clicking on logo-->
-    <script>
-        document.querySelector('.logo').addEventListener('click', function (e) {
-            e.preventDefault(); // prevent default anchor behavior
-            location.reload();  // reloads page
-        });
-
-    </script>
-    <!--Remove splash after animation-->
-    <script>
-        
-        window.addEventListener("load", () => {
-            setTimeout(() => {
-                document.getElementById("splash").style.display = "none";
-            }, 2000); // match animation duration
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
